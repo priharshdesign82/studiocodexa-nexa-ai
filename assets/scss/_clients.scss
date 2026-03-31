@@ -6,7 +6,8 @@
 .nx-clients-section {
   background-color: transparent;
   h2 {
-    font-size: 18px;
+    font-size: var(--nx-fs-lg);
+    letter-spacing: 0.15em;
   }
   .nx-marquee-wrapper {
     position: relative;
