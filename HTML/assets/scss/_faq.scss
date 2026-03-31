@@ -1,0 +1,48 @@
+/* ==========================================================================
+   NEXAAI - FAQ SECTION
+   File: _faq.scss
+   ========================================================================== */
+
+.faq-section {
+  background-color: var(--nx-bg);
+}
+
+.nx-accordion {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-border-color: var(--nx-border);
+  --bs-accordion-active-bg: var(--nx-bg-card);
+  --bs-accordion-active-color: var(--nx-primary);
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23A0A0A0'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2300D4FF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+  .accordion-item {
+    transition: all var(--nx-transition-base);
+    border: 1px solid var(--nx-border);
+    &:has(.accordion-collapse.show) {
+      border-color: rgba(0, 212, 255, 0.4) !important;
+      background-color: var(--nx-bg-elevated) !important;
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.05);
+    }
+  }
+
+  .accordion-button {
+    font-size: 1.1rem;
+    transition: color var(--nx-transition-base);
+
+    &:not(.collapsed) {
+      color: var(--nx-primary);
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    &:focus {
+      border-color: transparent;
+      box-shadow: none;
+    }
+  }
+
+  .accordion-body {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,66 @@
+/* ==========================================================================
+   NEXAAI - PREMIUM SAAS & AI STARTUP TEMPLATE
+   File: _general.scss
+   Description: Body styling, Scrollbars, Global Utilities and Selection Colors
+   ========================================================================== */
+
+body {
+  background-color: var(--nx-bg);
+  color: var(--nx-text-muted);
+  position: relative;
+}
+
+::selection {
+  background-color: rgba(0, 212, 255, 0.3);
+  color: var(--nx-text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nx-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nx-border);
+  border-radius: var(--nx-radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nx-primary);
+}
+
+a {
+  color: var(--nx-primary);
+  text-decoration: none;
+  transition: color var(--nx-transition-fast);
+  
+  &:hover {
+    color: var(--nx-secondary);
+  }
+}
+
+.section-padding {
+  padding: var(--nx-space-16) 0;
+  
+  @include media-down(lg) {
+    padding: var(--nx-space-8) 0;
+  }
+}
+
+/* Global Utilities */
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-dot-sm {
+  width: 6px;
+  height: 6px;
+}

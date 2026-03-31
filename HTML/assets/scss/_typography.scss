@@ -1,0 +1,52 @@
+/* ==========================================================================
+   NEXAAI - PREMIUM SAAS & AI STARTUP TEMPLATE
+   File: _typography.scss
+   Description: Global Typography & Headings
+   ========================================================================== */
+
+body {
+  font-family: var(--nx-font-sans);
+  font-size: var(--nx-fs-base);
+  line-height: 1.6;
+  color: var(--nx-text-muted);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--nx-font-display);
+  font-weight: var(--nx-fw-bold);
+  line-height: 1.2;
+  color: var(--nx-text);
+  margin-top: 0;
+  margin-bottom: var(--nx-space-4);
+}
+
+/* Mobile Default Sizes */
+h1, .h1 { font-size: var(--nx-fs-4xl); letter-spacing: -0.02em; }
+h2, .h2 { font-size: var(--nx-fs-3xl); letter-spacing: -0.01em; }
+h3, .h3 { font-size: var(--nx-fs-2xl); }
+h4, .h4 { font-size: var(--nx-fs-xl); }
+h5, .h5 { font-size: var(--nx-fs-lg); }
+h6, .h6 { font-size: var(--nx-fs-base); }
+
+/* Desktop Scaling Sizes */
+@include media-up(lg) {
+  h1, .h1 { font-size: var(--nx-fs-6xl); }
+  h2, .h2 { font-size: var(--nx-fs-5xl); }
+  h3, .h3 { font-size: var(--nx-fs-4xl); }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: var(--nx-space-4);
+}
+
+/* Global Utility: Text Gradient */
+.text-gradient {
+  background: var(--nx-gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}

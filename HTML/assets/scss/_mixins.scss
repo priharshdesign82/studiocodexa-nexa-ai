@@ -1,0 +1,134 @@
+/* ==========================================================================
+   NEXAAI - PREMIUM SAAS & AI STARTUP TEMPLATE
+   File: _mixins.scss
+   Description: Reusable SCSS mixins for responsive design and UI effects.
+   ========================================================================== */
+
+// --------------------------------------------------------------------------
+// 1. MEDIA QUERIES & BREAKPOINTS (Bootstrap 5 Standard)
+// --------------------------------------------------------------------------
+
+/* 📱 DEVICE CHEAT SHEET FOR BUYERS:
+   xs  : 0px      -> Small Mobile Phones (Portrait)
+   sm  : 576px    -> Large Mobile Phones (Landscape) / Small Tablets
+   md  : 768px    -> Tablets (iPad Portrait)
+   lg  : 992px    -> Tablets (iPad Landscape) / Small Laptops
+   xl  : 1200px   -> Laptops / Standard Desktops
+   xxl : 1400px   -> Large Monitors / Ultra-wide Screens
+*/
+
+$nx-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+/* * MOBILE FIRST MIXIN (min-width)
+   * Use this to apply styles from a specific device size and UPWARDS.
+   * Example: @include media-up(md) { ... } -> Applies to Tablets and larger.
+*/
+@mixin media-up($breakpoint) {
+  @if map-has-key($nx-breakpoints, $breakpoint) {
+    $value: map-get($nx-breakpoints, $breakpoint);
+
+    @media (min-width: $value) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Invalid breakpoint: #{$breakpoint}. Please use xs, sm, md, lg, xl, or xxl.";
+  }
+}
+
+/* * DESKTOP FIRST MIXIN (max-width)
+   * Use this to apply styles from a specific device size and DOWNWARDS.
+   * Example: @include media-down(md) { ... } -> Applies to Tablets and smaller mobiles.
+*/
+@mixin media-down($breakpoint) {
+  @if map-has-key($nx-breakpoints, $breakpoint) {
+    $value: map-get($nx-breakpoints, $breakpoint);
+
+    @media (max-width: ($value - 0.02px)) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Invalid breakpoint: #{$breakpoint}. Please use xs, sm, md, lg, xl, or xxl.";
+  }
+}
+
+// --------------------------------------------------------------------------
+// 2. LAYOUT & POSITIONING
+// --------------------------------------------------------------------------
+
+// Quick Flexbox Centering (Saves typing display: flex; align-items: center...)
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Absolute Centering (Great for center-aligning loaders or modal popups)
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// --------------------------------------------------------------------------
+// 3. UI EFFECTS (The "Wow" Factor Tools)
+// --------------------------------------------------------------------------
+
+// Gradient Text (For beautiful Hero Titles)
+@mixin gradient-text($gradient: var(--nx-gradient-primary)) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+// Hover Glow Effect (For Premium SaaS Buttons & Cards)
+@mixin neon-glow($color, $spread: 20px, $opacity: 0.4) {
+  box-shadow: 0 0 $spread rgba($color, $opacity);
+  transition: box-shadow var(--nx-transition-base), transform var(--nx-transition-base);
+
+  &:hover {
+    box-shadow: 0 0 ($spread * 1.5) rgba($color, $opacity + 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+@mixin glass-effect($bg-color: rgba(10, 12, 16, 0.7), $blur: 12px) {
+  background: $bg-color;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+// --------------------------------------------------------------------------
+// 4. UTILITIES
+// --------------------------------------------------------------------------
+
+// Text Truncation (Adds '...' when paragraph text is too long)
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Hide Scrollbar (Clean look for horizontal scrolling items like Client Logos)
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

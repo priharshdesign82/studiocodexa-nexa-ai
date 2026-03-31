@@ -1,0 +1,107 @@
+/* ==========================================================================
+   NEXAAI - HEADER & NAVBAR
+   ========================================================================== */
+
+.nx-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  .navbar {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    transition: padding 0.3s ease;
+  }
+
+  .navbar-brand .brand-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-brand:hover .brand-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--nx-text-muted);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+
+
+    &:hover {
+      color: #ffffff;
+    }
+
+    &.active {
+      color: var(--nx-primary) !important;
+      font-weight: 600;
+    }
+
+    @include media-up(lg) {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--nx-gradient-primary);
+        box-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      &:hover::after,
+      &.active::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .login-link {
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--nx-primary);
+    }
+  }
+
+  &.scrolled {
+    background: rgba(10, 12, 16, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    .navbar {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+  }
+  @include media-down(lg) {
+    .navbar-collapse {
+      background: var(--nx-bg-elevated);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      margin-top: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar-nav .nav-link {
+      padding: 0.75rem 0 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

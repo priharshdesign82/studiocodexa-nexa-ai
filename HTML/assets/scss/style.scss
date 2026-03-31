@@ -1,0 +1,43 @@
+/* ==========================================================================
+   🎨 NEXAAI - MAIN SCSS FILE
+   Premium SaaS & AI Startup Template
+   Design By PriHarsh Design ✦
+   ========================================================================== */
+
+// --------------------------------------------------------------------------
+// 1. CORE / ABSTRACTS (Variables & Tools)
+// --------------------------------------------------------------------------
+@import "variables";
+@import "mixins";       // Media queries aur reusable CSS blocks ke liye
+
+// --------------------------------------------------------------------------
+// 2. BASE (Global Styles)
+// --------------------------------------------------------------------------
+@import "reset";        // Default margins/padding reset karne ke liye
+@import "typography";   // Fonts, Headings (H1-H6) aur paragraphs ke liye
+@import "general";      // Body styles aur global utility classes
+
+// --------------------------------------------------------------------------
+// 3. COMPONENTS (Reusable UI Elements)
+// --------------------------------------------------------------------------
+@import "buttons";      // Buttons aur unke glowing hover effects
+@import "animations";   // "Wow" factor keyframes (Typing, Floating, Pulse)
+
+// --------------------------------------------------------------------------
+// 4. LAYOUT / SECTIONS (Page Blocks)
+// --------------------------------------------------------------------------
+@import "header";       // Navbar aur sticky header navigation
+@import "hero";         // Main hero section (Headline + Background animations)
+@import "clients";      // Social proof / Trusted by logos (Hero ke theek baad)
+@import "features";     // Problem & Solution cards
+@import "how-it-works"; // Step-by-step process
+@import "demo";         // Interactive Real-time Chat/App Demo
+@import "pricing";      // Monthly/Yearly toggle plans
+@import "testimonials"; // User reviews slider
+@import "faq";          // Accordions
+@import "cta";          // Final Call to Action section (Footer se pehle)
+@import "footer";       // Footer links aur newsletter
+
+/* ==========================================================================
+   END OF FILE
+   ========================================================================== */

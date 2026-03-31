@@ -1,0 +1,80 @@
+/* ==========================================================================
+   NEXAAI - PREMIUM SAAS & AI STARTUP TEMPLATE
+   File: _reset.scss
+   Description: CSS Reset & Box Sizing Rules with Deep Grid Integration
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  /* Offset for fixed header to prevent overlap during smooth scroll */
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--nx-bg);
+  color: var(--nx-text);
+  font-family: var(--nx-font-sans);
+
+  /* Font smoothing for crisp rendering on MacOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* ==========================================================================
+     ULTRA-SUBTLE ENGINEERING GRID
+     ========================================================================== */
+  background-image:
+    linear-gradient(rgba(var(--nx-white), 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--nx-white), 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: center top;
+  /* Ensures the grid stays behind everything */
+  z-index: var(--nx-z-negative);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  font-family: var(--nx-font-sans);
+  /* Enforce typography on inputs */
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  font-family: var(--nx-font-display);
+  /* Apply display font stack to headings */
+}
+
+/* ==========================================================================
+   MAIN WRAPPER - PREVENTS HORIZONTAL SCROLL
+   ========================================================================== */
+.nx-main-wrapper {
+  overflow-x: clip;
+  position: relative;
+  width: 100%;
+}

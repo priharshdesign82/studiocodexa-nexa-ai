@@ -1,0 +1,75 @@
+/* ==========================================================================
+   NEXAAI - INFINITE MARQUEE CLIENTS SECTION
+   File: _clients.scss
+   ========================================================================== */
+
+.nx-clients-section {
+  background-color: transparent;
+  h2 {
+    font-size: 18px;
+  }
+  .nx-marquee-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1rem 0;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 150px;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, var(--nx-bg) 0%, transparent 100%);
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, var(--nx-bg) 0%, transparent 100%);
+    }
+
+    .nx-marquee-content {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      width: max-content;
+      animation: infiniteScroll 25s linear infinite;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+
+    .client-logo-text {
+      font-family: var(--nx-font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.4);
+      transition: color 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--nx-primary);
+      }
+    }
+  }
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - 2.5rem));
+  }
+}

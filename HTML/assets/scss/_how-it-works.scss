@@ -1,0 +1,151 @@
+/* ==========================================================================
+   LANGCHAIN SCROLL-SPY STYLES
+   File: _how-it-works.scss
+   ========================================================================== */
+
+.hw-scroll-section {
+  background-color: var(--nx-bg);
+
+  .nx-content-wrapper {
+    position: relative;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 3rem;
+    
+    @include media-down(lg) {
+      padding-left: 2rem;
+    }
+  }
+
+  .nx-sticky-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 150px;
+    height: max-content;
+
+    .nav-link {
+      position: relative;
+      display: block;
+      font-family: var(--nx-font-sans);
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.4);
+      padding: 0.75rem 0;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: calc(-12px - (var(--bs-gutter-x) / 2));
+        transform: translateY(-50%);
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: transparent;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      &.active {
+        color: var(--nx-primary);
+        font-weight: 500;
+
+        &::after {
+          background: var(--nx-primary);
+          box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);
+        }
+      }
+    }
+  }
+
+  .nx-content-block {
+    margin-bottom: 12rem;
+    scroll-margin-top: 150px;
+    opacity: 0.4;
+    transition: opacity 0.5s ease;
+
+    @include media-down(lg) {
+      margin-bottom: 4rem;
+    }
+
+    &.in-view {
+      opacity: 1;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .icon-box {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(var(--nx-primary-rgb), 0.1);
+      border-radius: 4px;
+    }
+
+    .display-6 {
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .nx-browser-frame {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+
+    .frame-header {
+      background: rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      height: 36px;
+
+      .window-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        opacity: 0.8;
+
+        &.dot-close {
+          background-color: #ff5f56;
+        }
+
+        &.dot-minimize {
+          background-color: #ffbd2e;
+        }
+
+        &.dot-maximize {
+          background-color: #27c93f;
+        }
+      }
+    }
+
+    .hw-img-filter {
+      opacity: 0.85;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* How It Works Specific Overrides */
+#how-it-works {
+  .lead {
+    max-width: 650px;
+  }
+}
+
+#step-analytics {
+  img {
+    filter: hue-rotate(45deg) contrast(1.1) brightness(0.9);
+  }
+}

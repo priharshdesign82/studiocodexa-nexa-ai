@@ -1,0 +1,334 @@
+/* ==========================================================================
+   NEXAAI - HERO SECTION (UPGRADED AI DASHBOARD)
+   File: _hero.scss
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  background-color: transparent;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  .hero-visual-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .hero-glow-backdrop {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 70%;
+      background: var(--nx-gradient-primary);
+      filter: blur(140px);
+      opacity: 0.12;
+      border-radius: 50%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .nx-browser-frame {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: none;
+      border-radius: 12px 12px 0 0;
+      background: #000;
+      transform: perspective(1200px) rotateX(2deg);
+      transform-origin: bottom center;
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+
+      &:hover {
+        transform: perspective(1200px) rotateX(0deg);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 50px rgba(0, 212, 255, 0.15);
+      }
+
+      .frame-header {
+        background: rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        height: 36px;
+
+        .window-dot {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          opacity: 0.8;
+
+          &.dot-close {
+            background-color: #ff5f56;
+          }
+
+          &.dot-minimize {
+            background-color: #ffbd2e;
+          }
+
+          &.dot-maximize {
+            background-color: #27c93f;
+          }
+        }
+      }
+
+      .ai-live-interface {
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        min-height: 400px;
+
+        .pulse-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          display: inline-block;
+          animation: blink 1.5s infinite;
+        }
+
+        .data-network {
+          height: 250px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .ai-brain-node {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 5;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+
+            .brain-ring {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              border-radius: 50%;
+              border: 1px solid var(--nx-primary);
+              animation: pulseRing 4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+
+              &.ring-1 {
+                width: 100%;
+                height: 100%;
+                animation-delay: 0s;
+              }
+
+              &.ring-2 {
+                width: 100%;
+                height: 100%;
+                animation-delay: 1.2s;
+              }
+
+              &.ring-3 {
+                width: 100%;
+                height: 100%;
+                animation-delay: 2.4s;
+              }
+            }
+          }
+
+          .data-track {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            z-index: 1;
+
+            &.track-1 {
+              top: 30%;
+              left: 0;
+              width: 45%;
+              transform: rotate(15deg);
+            }
+
+            &.track-2 {
+              top: 50%;
+              left: 0;
+              width: 45%;
+            }
+
+            &.track-3 {
+              top: 70%;
+              left: 0;
+              width: 45%;
+              transform: rotate(-15deg);
+            }
+
+            &.track-out-1 {
+              top: 35%;
+              right: 0;
+              width: 45%;
+              transform: rotate(-10deg);
+            }
+
+            &.track-out-2 {
+              top: 65%;
+              right: 0;
+              width: 45%;
+              transform: rotate(10deg);
+            }
+
+            .data-packet {
+              position: absolute;
+              top: -2px;
+              left: 0;
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background: #fff;
+              animation: movePacket 3s linear infinite;
+
+              &.packet-blue {
+                box-shadow: 0 0 10px 3px rgba(0, 212, 255, 0.8);
+              }
+
+              &.packet-green {
+                box-shadow: 0 0 10px 3px rgba(57, 255, 20, 0.8);
+                animation-name: movePacketRight;
+              }
+            }
+          }
+          .track-2 .data-packet {
+            animation-duration: 2.5s;
+            animation-delay: 1s;
+          }
+
+          .track-3 .data-packet {
+            animation-duration: 4s;
+            animation-delay: 0.5s;
+          }
+
+          .track-out-1 .data-packet {
+            animation-duration: 2.2s;
+            animation-delay: 1.5s;
+          }
+
+          .track-out-2 .data-packet {
+            animation-duration: 3.5s;
+            animation-delay: 0.2s;
+          }
+        }
+
+        .terminal-window {
+          background: rgba(10, 12, 16, 0.8);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 20px 40px rgba(0, 0, 0, 0.5);
+
+          .terminal-glare {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 40%);
+            transform: rotate(30deg);
+            pointer-events: none;
+          }
+
+          .terminal-logs {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #A0A0A0;
+            height: 220px;
+            overflow-y: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            .log-line {
+              margin-bottom: 0.6rem;
+              opacity: 0;
+              animation: fadeInLog 0.3s ease forwards;
+
+              .keyword {
+                color: var(--nx-primary);
+                font-weight: bold;
+              }
+
+              .success {
+                color: var(--nx-accent);
+              }
+
+              .warning {
+                color: #ffbd2e;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hero-bottom-fade {
+      position: absolute;
+      bottom: -1px;
+      left: -5%;
+      width: 110%;
+      height: 300px;
+      background: linear-gradient(to top, var(--nx-bg) 10%, transparent 100%);
+      z-index: 3;
+      pointer-events: none;
+    }
+  }
+}
+
+/* Hero Section Specific Overrides */
+#tsparticles-network {
+  z-index: 0;
+  pointer-events: none;
+}
+
+#home {
+  h1.display-2 {
+    max-width: 950px;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+  }
+  
+  p.lead {
+    max-width: 700px;
+    font-size: 1.25rem;
+  }
+}
+
+/* Animations */
+@keyframes pulseRing {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(3.5);
+    opacity: 0;
+  }
+}
+
+@keyframes movePacket {
+  0% { left: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes movePacketRight {
+  0% { left: 0; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes fadeInLog {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

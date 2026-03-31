@@ -1,0 +1,87 @@
+/* ==========================================================================
+   NEXAAI - FEATURES (PREMIUM BENTO BOX)
+   File: _features.scss
+   ========================================================================== */
+
+.nx-features-section {
+  background-color: var(--nx-bg);
+}
+
+.nx-bento-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--nx-radius-2xl);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 20px rgba(0, 0, 0, 0.2);
+
+  transition: transform var(--nx-transition-base), border-color var(--nx-transition-base), box-shadow var(--nx-transition-base);
+  z-index: 1;
+  .icon-box {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--nx-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .card-glow {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: var(--nx-primary);
+    filter: blur(90px);
+    opacity: 0.15;
+    border-radius: var(--nx-radius-full);
+    transition: opacity var(--nx-transition-base), transform var(--nx-transition-base);
+    z-index: 0;
+    pointer-events: none;
+
+    &.secondary {
+      background: var(--nx-secondary);
+      left: -50px;
+      right: auto;
+    }
+
+    &.accent {
+      background: var(--nx-accent);
+      bottom: -50px;
+      top: auto;
+      right: -50px;
+    }
+  }
+  .decorative-icon {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 150px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.02);
+    z-index: 0;
+    pointer-events: none;
+    transform: rotate(-15deg);
+    transition: transform var(--nx-transition-slow), color var(--nx-transition-base);
+  }
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 40px rgba(0, 0, 0, 0.5);
+
+    .card-glow {
+      opacity: 0.3;
+      transform: scale(1.2);
+    }
+
+    .decorative-icon {
+      color: rgba(255, 255, 255, 0.05);
+      transform: rotate(0deg) scale(1.1);
+    }
+  }
+}
+#features .lead {
+  max-width: 650px;
+}

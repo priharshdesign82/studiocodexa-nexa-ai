@@ -1,0 +1,100 @@
+/* ==========================================================================
+   NEXAAI - TESTIMONIALS SECTION
+   File: _testimonials.scss
+   ========================================================================== */
+
+.testimonials-section {
+  background-color: var(--nx-bg);
+  .avatar-sm {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* ------------------------------------------------------------------------
+     MARQUEE SETUP & MASKS
+     ------------------------------------------------------------------------ */
+  .marquee-wrapper {
+    position: relative;
+    overflow: hidden;
+    
+    .fade-mask-left,
+    .fade-mask-right {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 150px; 
+      z-index: 10;
+      pointer-events: none;
+      
+      @include media-up(lg) {
+        width: 300px;
+      }
+    }
+    
+    .fade-mask-left {
+      left: 0;
+      background: linear-gradient(to right, var(--nx-bg) 0%, transparent 100%);
+    }
+    
+    .fade-mask-right {
+      right: 0;
+      background: linear-gradient(to left, var(--nx-bg) 0%, transparent 100%);
+    }
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    padding: 1.5rem 0; 
+    
+    &:hover {
+      animation-play-state: paused;
+    }
+
+    &.track-left {
+      animation: scrollLeft 60s linear infinite;
+    }
+
+    &.track-right {
+      transform: translateX(-50%);
+      animation: scrollRight 60s linear infinite;
+    }
+    
+    .marquee-content {
+      gap: 2rem !important; 
+      padding-right: 2rem;
+    }
+  }
+
+  .nx-review-card {
+    width: 340px; 
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    white-space: normal;
+    transition: transform var(--nx-transition-base), border-color var(--nx-transition-base), box-shadow var(--nx-transition-base), background var(--nx-transition-base);
+    
+    @include media-up(md) {
+      width: 400px;
+    }
+    
+    &:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.07) !important;
+      border-color: rgba(255, 255, 255, 0.2) !important;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}

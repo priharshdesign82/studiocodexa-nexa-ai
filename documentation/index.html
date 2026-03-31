@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>NexaAI - Premium SaaS & AI Startup HTML Template</title>
+  <meta name="description" content="NexaAI is a premium, dark-theme HTML template built with Bootstrap 5. Perfect for AI startups, SaaS products, and tech agencies.">
+  <meta name="keywords" content="AI, SaaS, Startup, Machine Learning, Chatbot, Bootstrap 5, HTML Template, Dark Mode, Tech">
+  <meta name="author" content="PriHarsh Design">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="NexaAI - Premium SaaS & AI Startup HTML Template">
+  <meta property="og:description" content="The intelligent AI workforce designed to automate customer support and scale your business effortlessly.">
+  <meta property="og:image" content="assets/images/og-image.jpg"> 
+  
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="NexaAI - Premium SaaS & AI Startup HTML Template">
+  <meta property="twitter:description" content="The intelligent AI workforce designed to automate customer support and scale your business effortlessly.">
+  <meta property="twitter:image" content="assets/images/twitter-card.jpg">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <link href="css/prism-tomorrow.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <button
+    class="btn btn-primary btn-glow d-lg-none mobile-toggle position-fixed bottom-0 end-0 m-4 z-3 rounded-pill px-4 shadow-lg"
+    type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas">
+    <i class="ri-menu-4-line me-2"></i> Menu
+  </button>
+
+  <div class="d-flex">
+
+    <div class="offcanvas-lg offcanvas-start doc-sidebar bg-dark border-end border-secondary" tabindex="-1"
+      id="sidebarOffcanvas">
+      <div class="offcanvas-header border-bottom border-secondary">
+        <h5 class="offcanvas-title text-white fw-bold d-flex align-items-center gap-2">
+          <i class="ri-blaze-fill text-primary"></i> NexaAI Docs
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+          data-bs-target="#sidebarOffcanvas"></button>
+      </div>
+      <div class="offcanvas-body p-0 custom-scrollbar">
+        <div class="p-4">
+          <div class="mb-4">
+            <h4 class="fw-bold mb-1 text-white d-flex align-items-center gap-2">
+              <span class="bg-primary bg-opacity-10 text-primary p-2 rounded-3 fs-5"><i
+                  class="ri-blaze-fill"></i></span>
+              Nexa<span class="text-primary">AI</span>
+            </h4>
+            <p class="text-muted fs-sm ms-5 mb-0">v1.0.0 | By studiocodexa</p>
+          </div>
+
+          <nav id="docSidebar" class="nav flex-column doc-nav gap-1">
+            <a class="nav-link active" href="#introduction"><i class="ri-rocket-line me-2"></i> Introduction</a>
+            <a class="nav-link" href="#installation"><i class="ri-terminal-box-line me-2"></i> Installation & Setup</a>
+            <a class="nav-link" href="#folder-structure"><i class="ri-folder-open-line me-2"></i> Folder Structure</a>
+            <a class="nav-link" href="#css-scss"><i class="ri-palette-line me-2"></i> CSS & SCSS</a>
+            <a class="nav-link" href="#javascript"><i class="ri-code-s-slash-line me-2"></i> JavaScript</a>
+            <a class="nav-link" href="#customization"><i class="ri-settings-3-line me-2"></i> Customization</a>
+            <a class="nav-link" href="#credits"><i class="ri-heart-line me-2"></i> Sources & Credits</a>
+            <a class="nav-link" href="#support"><i class="ri-customer-service-2-line me-2"></i> Support & Contact</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <main class="doc-content flex-grow-1 p-4 p-lg-5 pt-lg-4">
+      <div class="container-fluid max-w-custom mx-auto">
+
+        <section id="introduction" class="doc-section mb-5 pt-4">
+          <div
+            class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 rounded-pill px-3 py-2 mb-3">
+            Getting Started
+          </div>
+          <h1 class="fw-extrabold mb-3 text-white display-5">Welcome to <span class="text-gradient">NexaAI</span> 👋
+          </h1>
+          <p class="lead text-muted border-bottom border-secondary pb-4">Thank you for purchasing the NexaAI - AI
+            Support Agents SaaS HTML Template. This documentation will help you understand the code structure and how to
+            customize the theme for your project.</p>
+
+          <div
+            class="alert bg-card border border-secondary text-light mt-4 rounded-4 d-flex gap-3 align-items-start p-4 shadow-sm">
+            <i class="ri-information-fill text-primary fs-3"></i>
+            <div>
+              <h5 class="text-white fw-bold mb-1">Prerequisites</h5>
+              <p class="text-muted mb-0 fs-sm">You need basic knowledge of HTML, CSS/SCSS, and JavaScript to fully
+                customize this template.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="installation" class="doc-section mb-5 pt-4">
+          <h2 class="fw-bold mb-4 text-white d-flex align-items-center gap-2"><i
+              class="ri-terminal-box-line text-primary"></i> Installation & Setup</h2>
+          <p class="text-muted">NexaAI uses SCSS for styling to make customization incredibly fast and easy. To compile
+            the SCSS files into standard CSS, you will need to compile them.</p>
+
+          <h5 class="text-white mt-4">Compiling SCSS to CSS</h5>
+          <p class="text-muted">If you have Node.js and Sass installed globally on your machine, you can run the
+            following command in your terminal from the root folder of the template:</p>
+
+          <div class="card bg-card border-secondary shadow-lg rounded-4 overflow-hidden mt-3">
+            <div class="card-header bg-dark border-secondary d-flex align-items-center gap-2 px-3 py-2">
+              <div class="d-flex gap-1 me-3">
+                <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+              </div>
+              <span class="text-muted fs-xs font-monospace">Terminal</span>
+            </div>
+            <div class="card-body p-0">
+              <pre><code class="language-bash"># Install Sass globally (if you haven't already)
+npm install -g sass
+
+# Watch and compile SCSS to CSS
+sass --watch assets/scss/style.scss:assets/css/style.css
+</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="folder-structure" class="doc-section mb-5 pt-4">
+          <h2 class="fw-bold mb-4 text-white d-flex align-items-center gap-2"><i
+              class="ri-folder-open-line text-primary"></i> Folder Structure</h2>
+          <p class="text-muted">When you extract the downloaded zip file, you will find the following structure:</p>
+
+          <div class="card bg-card border-secondary shadow-lg rounded-4 overflow-hidden">
+            <div class="card-header bg-dark border-secondary d-flex align-items-center gap-2 px-3 py-2">
+              <div class="d-flex gap-1">
+                <span class="rounded-circle bg-danger" style="width: 12px; height: 12px;"></span>
+                <span class="rounded-circle bg-warning" style="width: 12px; height: 12px;"></span>
+                <span class="rounded-circle bg-success" style="width: 12px; height: 12px;"></span>
+              </div>
+            </div>
+            <div class="card-body p-0">
+              <pre><code class="language-tree">📁 NexaAI_Template/
+├── 📁 Documentation/        # This documentation folder
+└── 📁 HTML/                 # Main Template Files
+    ├── 📄 index.html        # Main landing page
+    └── 📁 assets/
+        ├── 📁 css/          # Compiled CSS files
+        ├── 📁 scss/         # Modular SCSS source files
+        ├── 📁 js/           # Main app.js and vendor scripts
+        └── 📁 images/       # Placeholder images
+</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="css-scss" class="doc-section mb-5 pt-4">
+          <h2 class="fw-bold mb-4 text-white d-flex align-items-center gap-2"><i
+              class="ri-palette-line text-primary"></i> CSS & SCSS Architecture</h2>
+          <p class="text-muted">NexaAI is built using modern SCSS with a modular approach. All variables (colors, fonts,
+            spacing) are defined in <code>_variables.scss</code> and mapped to CSS Custom Properties (Variables) in the
+            <code>:root</code> selector.</p>
+
+          <div class="card bg-dark border-secondary p-4 rounded-4 mt-4 mb-4">
+            <h5 class="text-white mb-3">How to change the Theme Colors?</h5>
+            <p class="text-muted fs-sm">Open <code>assets/scss/_variables.scss</code> and modify the core hex codes at
+              the top of the file. The SCSS will automatically generate all gradients, glows, and hover states across
+              the entire template.</p>
+          </div>
+
+          <div class="card bg-card border-secondary shadow-lg rounded-4 overflow-hidden">
+            <div class="card-header bg-dark border-secondary px-3 py-2 text-muted fs-xs font-monospace">
+              _variables.scss
+            </div>
+            <div class="card-body p-0">
+              <pre><code class="language-scss">// Change these values to match your brand
+$nx-primary:          #00D4FF; 
+$nx-secondary:        #6C63FF;
+$nx-accent:           #39FF14;
+</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="javascript" class="doc-section mb-5 pt-4">
+          <h2 class="fw-bold mb-4 text-white d-flex align-items-center gap-2"><i
+              class="ri-code-s-slash-line text-primary"></i> JavaScript (app.js)</h2>
+          <p class="text-muted">All custom interactive features are handled in <code>assets/js/app.js</code>. The code
+            is heavily commented into clear numbered sections.</p>
+
+          <h5 class="text-white mt-4">Customizing Chatbot Responses</h5>
+          <p class="text-muted mb-3">To change what the demo chatbot replies with, find <strong>Section 7</strong> in
+            <code>app.js</code> and edit the <code>aiResponses</code> array:</p>
+
+          <div class="card bg-card border-secondary shadow-lg rounded-4 overflow-hidden">
+            <div class="card-body p-0">
+              <pre><code class="language-javascript">const aiResponses = [
+  "Integrating NexaAI takes under 60 seconds. Want the guide?",
+  "Our Starter plan is $49/mo, with 1,000 resolutions included.",
+  "Your custom message goes here..."
+];
+</code></pre>
+            </div>
+          </div>
+        </section>
+
+        <section id="customization" class="doc-section mb-5 pt-4">
+          <h2 class="fw-bold mb-4 text-white d-flex align-items-center gap-2"><i
+              class="ri-settings-3-line text-primary"></i> General Customization</h2>
+
+          <div class="row g-4 mt-2">
+            <div class="col-md-6">
+              <div class="card bg-card border-secondary shadow-sm rounded-4 h-100 p-4 transition-hover">
+                <div
+                  class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                  style="width: 48px; height: 48px;">
+                  <i class="ri-bubble-chart-line fs-4"></i>
+                </div>
+                <h5 class="text-white fw-bold">Changing Particle Colors</h5>
+                <p class="text-muted fs-sm mb-0">If you want to change the network background colors, go to
+                  <code>app.js</code> (Section 9) and update the hex codes in the <code>tsParticles.load</code>
+                  configuration.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card bg-card border-secondary shadow-sm rounded-4 h-100 p-4 transition-hover">
+                <div
+                  class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                  style="width: 48px; height: 48px;">
+                  <i class="ri-magic-line fs-4"></i>
+                </div>
+                <h5 class="text-white fw-bold">Animations (GSAP & AOS)</h5>
+                <p class="text-muted fs-sm mb-0">Scroll animations are handled by AOS (edit <code>data-aos</code>
+                  attributes in HTML) and complex reveal animations are handled by GSAP ScrollTrigger in JS.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="credits" class="doc-section mb-5 pt-4">
+          <h2 class="fw-bold mb-4 text-white d-flex align-items-center gap-2"><i class="ri-heart-line text-primary"></i>
+            Sources & Credits</h2>
+          <p class="text-muted mb-4">We have used the following open-source resources and libraries in this template:
+          </p>
+
+          <div class="card bg-card border-secondary rounded-4 overflow-hidden mb-4">
+            <ul class="list-group list-group-flush">
+              <li
+                class="list-group-item bg-transparent text-muted border-secondary py-3 px-4 d-flex justify-content-between align-items-center">
+                <span><i class="ri-bootstrap-fill text-primary me-2"></i> Bootstrap 5</span>
+                <a href="https://getbootstrap.com/" target="_blank"
+                  class="text-primary text-decoration-none text-sm">View <i class="ri-arrow-right-up-line"></i></a>
+              </li>
+              <li
+                class="list-group-item bg-transparent text-muted border-secondary py-3 px-4 d-flex justify-content-between align-items-center">
+                <span><i class="ri-font-size text-primary me-2"></i> Google Fonts (Inter, Manrope)</span>
+                <a href="https://fonts.google.com/" target="_blank"
+                  class="text-primary text-decoration-none text-sm">View <i class="ri-arrow-right-up-line"></i></a>
+              </li>
+              <li
+                class="list-group-item bg-transparent text-muted border-secondary py-3 px-4 d-flex justify-content-between align-items-center">
+                <span><i class="ri-remixicon-fill text-primary me-2"></i> RemixIcon</span>
+                <a href="https://remixicon.com/" target="_blank" class="text-primary text-decoration-none text-sm">View
+                  <i class="ri-arrow-right-up-line"></i></a>
+              </li>
+              <li
+                class="list-group-item bg-transparent text-muted border-secondary py-3 px-4 d-flex justify-content-between align-items-center">
+                <span><i class="ri-drag-move-fill text-primary me-2"></i> GSAP & AOS Animations</span>
+                <a href="https://greensock.com/gsap/" target="_blank"
+                  class="text-primary text-decoration-none text-sm">View <i class="ri-arrow-right-up-line"></i></a>
+              </li>
+              <li
+                class="list-group-item bg-transparent text-muted border-secondary py-3 px-4 d-flex justify-content-between align-items-center">
+                <span><i class="ri-bubble-chart-fill text-primary me-2"></i> tsParticles</span>
+                <a href="https://particles.js.org/" target="_blank"
+                  class="text-primary text-decoration-none text-sm">View <i class="ri-arrow-right-up-line"></i></a>
+              </li>
+            </ul>
+          </div>
+
+          <div
+            class="alert alert-warning bg-warning bg-opacity-10 border border-warning text-light mt-4 rounded-4 d-flex gap-3 align-items-start p-4">
+            <i class="ri-image-line text-warning fs-3"></i>
+            <div>
+              <strong class="text-warning fs-5">Image Copyright Notice</strong><br>
+              <span class="text-muted fs-sm">The images used in the live preview (demo) are from
+                <strong>Unsplash.com</strong> and are for demonstration purposes only. They are <strong>NOT
+                  included</strong> in the final download package. Placeholder images have been provided instead.</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="support" class="doc-section mb-5 pt-4">
+          <h2 class="fw-bold mb-4 text-white d-flex align-items-center gap-2"><i
+              class="ri-customer-service-2-line text-primary"></i> Support & Contact</h2>
+          <p class="text-muted">Need help with the template? Have a question or a feature request? We are always here to
+            help!</p>
+
+          <div class="card bg-card border-secondary shadow-sm rounded-4 p-4 mt-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div
+                class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center"
+                style="width: 48px; height: 48px;">
+                <i class="ri-mail-send-line fs-4"></i>
+              </div>
+              <div>
+                <h5 class="text-white fw-bold mb-1">studiocodexa</h5>
+                <a href="mailto:studiocodexa@gmail.com"
+                  class="text-primary text-decoration-none">studiocodexa@gmail.com</a>
+              </div>
+            </div>
+            <p class="text-muted fs-sm mb-0">We aim to respond to all support queries within 24-48 hours on business
+              days. Please include your purchase code when requesting support.</p>
+          </div>
+        </section>
+
+        <footer class="mt-5 pt-4 border-top border-secondary text-center text-muted fs-sm pb-5 pb-lg-0">
+          &copy; 2026 studiocodexa. All rights reserved.
+        </footer>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/prism.min.js"></script>
+  <script src="js/prism-scss.min.js"></script>
+  <script src="js/prism-bash.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>

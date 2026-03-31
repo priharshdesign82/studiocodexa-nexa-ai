@@ -1,0 +1,237 @@
+/* ==========================================================================
+   NEXAAI - PREMIUM SAAS & AI STARTUP TEMPLATE
+   File: _variables.scss
+   Description: Core SCSS variables and CSS Custom Properties mapping.
+   ========================================================================== 
+
+   TABLE OF CONTENTS:
+   01. Core Colors & RGB Variables (Updated)
+   02. Dark Theme Backgrounds (LangChain Deep Space)
+   03. Gradients & Glow Effects
+   04. Typography (TWK Lausanne / Inter)
+   05. Spacing & Sizing
+   06. Border Radius
+   07. Shadows & Blurs
+   08. Animation & Transitions
+   09. Z-Index Scale
+   10. CSS Custom Properties Mapping (:root)
+   ========================================================================== */
+
+// --------------------------------------------------------------------------
+// 01. CORE COLORS & RGB VALUES
+// --------------------------------------------------------------------------
+$nx-primary:          #00D4FF;
+$nx-primary-rgb:      0, 212, 255;
+
+$nx-secondary:        #6C63FF;
+$nx-secondary-rgb:    108, 99, 255;
+
+$nx-accent:           #39FF14;
+$nx-accent-rgb:       57, 255, 20;
+
+$nx-white:            #fffffF;
+
+// Universal White & Black RGBs (For Dynamic Opacities)
+$nx-black-rgb:        0, 0, 0;
+
+// --------------------------------------------------------------------------
+// 02. DARK THEME BACKGROUNDS & TEXT
+// --------------------------------------------------------------------------
+// LangChain / Vercel Deep Space Dark
+$nx-bg-dark:          #050505; 
+$nx-bg-dark-rgb:      5, 5, 5;
+
+$nx-bg-card:          #0A0A0A; 
+$nx-bg-elevated:      #111111; 
+$nx-border:           #1F1F1F; 
+
+$nx-text-primary:     #EDEDED; 
+$nx-text-secondary:   #A1A1A1; 
+$nx-text-muted:       #737373; 
+
+// --------------------------------------------------------------------------
+// 03. GRADIENTS & GLOW EFFECTS
+// --------------------------------------------------------------------------
+$nx-gradient-primary: linear-gradient(135deg, $nx-primary, $nx-secondary);
+$nx-gradient-accent:  linear-gradient(135deg, $nx-accent, $nx-primary);
+
+$nx-glow-primary:     0 0 20px rgba($nx-primary, 0.4);
+$nx-glow-secondary:   0 0 30px rgba($nx-secondary, 0.5);
+$nx-glow-text:        0 0 10px rgba($nx-primary, 0.6);
+
+// --------------------------------------------------------------------------
+// 04. TYPOGRAPHY
+// --------------------------------------------------------------------------
+// Elite SaaS Font Stack prioritizing TWK Lausanne
+$nx-font-sans:        'Twklausanne', Tahoma, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$nx-font-display:     'Twklausanne', Tahoma, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+$nx-fs-sm:            0.875rem;  
+$nx-fs-base:          1rem;      
+$nx-fs-lg:            1.125rem;  
+$nx-fs-xl:            1.25rem;   
+$nx-fs-2xl:           1.5rem;    
+$nx-fs-3xl:           1.875rem;  
+$nx-fs-4xl:           2.25rem;   
+$nx-fs-5xl:           3.5rem;    
+$nx-fs-6xl:           4.5rem;    
+
+$nx-fw-normal:        400;
+$nx-fw-medium:        500;
+$nx-fw-semibold:      600;
+$nx-fw-bold:          700;
+$nx-fw-extrabold:     800;
+
+// --------------------------------------------------------------------------
+// 05. SPACING & SIZING
+// --------------------------------------------------------------------------
+$nx-space-2:          0.5rem;    
+$nx-space-3:          0.75rem;   
+$nx-space-4:          1rem;      
+$nx-space-5:          1.25rem;   
+$nx-space-6:          1.5rem;    
+$nx-space-8:          2rem;      
+$nx-space-10:         2.5rem;    
+$nx-space-12:         3rem;      
+$nx-space-16:         4rem;      
+$nx-space-20:         5rem;      
+
+// --------------------------------------------------------------------------
+// 06. BORDER RADIUS
+// --------------------------------------------------------------------------
+$nx-radius-sm:        0.25rem;   
+$nx-radius-md:        0.5rem;    
+$nx-radius-lg:        0.75rem;   
+$nx-radius-xl:        1rem;      
+$nx-radius-2xl:       1.5rem;    
+$nx-radius-full:      9999px;    
+
+// --------------------------------------------------------------------------
+// 07. SHADOWS & BLURS
+// --------------------------------------------------------------------------
+$nx-shadow-sm:        0 2px 4px rgba(0, 0, 0, 0.1);
+$nx-shadow-md:        0 4px 8px rgba(0, 0, 0, 0.2);
+$nx-shadow-lg:        0 8px 24px rgba(0, 0, 0, 0.3);
+$nx-shadow-primary:   0 8px 24px rgba($nx-primary, 0.25);
+$nx-shadow-2xl:       0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+$nx-blur-sm:          blur(4px);
+$nx-blur-md:          blur(8px);
+$nx-blur-lg:          blur(12px);
+$nx-blur-xl:          blur(24px);
+
+// --------------------------------------------------------------------------
+// 08. ANIMATION & TRANSITIONS
+// --------------------------------------------------------------------------
+$nx-transition-fast:  0.2s ease-in-out;
+$nx-transition-base:  0.3s ease-in-out;
+$nx-transition-slow:  0.5s ease-in-out;
+$nx-transition-bounce:0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+// --------------------------------------------------------------------------
+// 09. Z-INDEX SCALE
+// --------------------------------------------------------------------------
+$nx-z-negative:       -1;
+$nx-z-elevate:        10;
+$nx-z-dropdown:       1000;
+$nx-z-sticky:         1020;
+$nx-z-fixed:          1030;
+$nx-z-modal:          1050;
+
+/* ==========================================================================
+   10. CSS CUSTOM PROPERTIES MAPPING (:root)
+   ========================================================================== */
+:root {
+  // Brand Colors
+  --nx-primary:             #{$nx-primary};
+  --nx-primary-rgb:         #{$nx-primary-rgb};
+  --nx-secondary:           #{$nx-secondary};
+  --nx-secondary-rgb:       #{$nx-secondary-rgb};
+  --nx-accent:              #{$nx-accent};
+  --nx-accent-rgb:          #{$nx-accent-rgb};
+  
+  // Base RGB values for transparency
+  --nx-white:           #{$nx-white};
+  --nx-black-rgb:           #{$nx-black-rgb};
+  --nx-bg-rgb:              #{$nx-bg-dark-rgb};
+  
+  // Theme Backgrounds
+  --nx-bg:                  #{$nx-bg-dark};
+  --nx-bg-card:             #{$nx-bg-card};
+  --nx-bg-elevated:         #{$nx-bg-elevated};
+  --nx-border:              #{$nx-border};
+  
+  // Theme Text
+  --nx-text:                #{$nx-text-primary};
+  --nx-text-secondary:      #{$nx-text-secondary};
+  --nx-text-muted:          #{$nx-text-muted};
+  
+  // Effects
+  --nx-gradient-primary:    #{$nx-gradient-primary};
+  --nx-glow-primary:        #{$nx-glow-primary};
+  --nx-glow-secondary:      #{$nx-glow-secondary};
+  --nx-glow-text:           #{$nx-glow-text};
+
+  // Typography 
+  --nx-font-sans:           #{$nx-font-sans};
+  --nx-font-display:        #{$nx-font-display};
+  --nx-fs-sm:               #{$nx-fs-sm};
+  --nx-fs-base:             #{$nx-fs-base};
+  --nx-fs-lg:               #{$nx-fs-lg};
+  --nx-fs-xl:               #{$nx-fs-xl};
+  --nx-fs-2xl:              #{$nx-fs-2xl};
+  --nx-fs-3xl:              #{$nx-fs-3xl};
+  --nx-fs-4xl:              #{$nx-fs-4xl};
+  --nx-fs-5xl:              #{$nx-fs-5xl};
+  --nx-fs-6xl:              #{$nx-fs-6xl};
+  --nx-fw-normal:           #{$nx-fw-normal};
+  --nx-fw-medium:           #{$nx-fw-medium};
+  --nx-fw-semibold:         #{$nx-fw-semibold};
+  --nx-fw-bold:             #{$nx-fw-bold};
+  --nx-fw-extrabold:        #{$nx-fw-extrabold};
+  
+  // Spacing & Sizing 
+  --nx-space-2:             #{$nx-space-2};
+  --nx-space-3:             #{$nx-space-3};
+  --nx-space-4:             #{$nx-space-4};
+  --nx-space-5:             #{$nx-space-5};
+  --nx-space-6:             #{$nx-space-6};
+  --nx-space-8:             #{$nx-space-8};
+  --nx-space-10:            #{$nx-space-10};
+  --nx-space-12:            #{$nx-space-12};
+  --nx-space-16:            #{$nx-space-16};
+  --nx-space-20:            #{$nx-space-20};
+
+  // Border Radius 
+  --nx-radius-sm:           #{$nx-radius-sm};
+  --nx-radius-md:           #{$nx-radius-md};
+  --nx-radius-lg:           #{$nx-radius-lg};
+  --nx-radius-xl:           #{$nx-radius-xl};
+  --nx-radius-2xl:          #{$nx-radius-2xl};
+  --nx-radius-full:         #{$nx-radius-full};
+
+  // Shadows & Blurs 
+  --nx-shadow-sm:           #{$nx-shadow-sm};
+  --nx-shadow-md:           #{$nx-shadow-md};
+  --nx-shadow-lg:           #{$nx-shadow-lg};
+  --nx-shadow-primary:      #{$nx-shadow-primary};
+  --nx-shadow-2xl:          #{$nx-shadow-2xl};
+  --nx-blur-sm:             #{$nx-blur-sm};
+  --nx-blur-md:             #{$nx-blur-md};
+  --nx-blur-lg:             #{$nx-blur-lg};
+  --nx-blur-xl:             #{$nx-blur-xl};
+  
+  // Transitions
+  --nx-transition-fast:     #{$nx-transition-fast};
+  --nx-transition-base:     #{$nx-transition-base};
+  --nx-transition-slow:     #{$nx-transition-slow};
+  --nx-transition-bounce:   #{$nx-transition-bounce};
+
+  // Z-Index 
+  --nx-z-negative:          #{$nx-z-negative};
+  --nx-z-elevate:           #{$nx-z-elevate};
+  --nx-z-dropdown:          #{$nx-z-dropdown};
+  --nx-z-sticky:            #{$nx-z-sticky};
+  --nx-z-fixed:             #{$nx-z-fixed};
+  --nx-z-modal:             #{$nx-z-modal};
+}

@@ -1,0 +1,191 @@
+/* ==========================================================================
+   NEXAAI - MODERN DOCUMENTATION STYLES (MOBILE RESPONSIVE FIX)
+   ========================================================================== */
+
+:root {
+  --doc-bg: #050505;
+  --doc-sidebar-bg: #0A0A0A;
+  --doc-card-bg: #111111;
+  --doc-primary: #00D4FF;
+  --doc-primary-rgb: 0, 212, 255;
+  --doc-text: #EDEDED;
+  --doc-muted: #A1A1A1;
+  --doc-border: #1F1F1F;
+}
+
+/* 🟢 ANTI-OVERFLOW FIX: Prevents horizontal scrolling globally */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--doc-bg);
+  color: var(--doc-text);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.fw-extrabold { font-weight: 800; }
+
+.text-primary { color: var(--doc-primary) !important; }
+.bg-dark { background-color: var(--doc-sidebar-bg) !important; }
+.bg-card { background-color: var(--doc-card-bg) !important; }
+.border-secondary { border-color: var(--doc-border) !important; }
+
+.max-w-custom { max-width: 900px; }
+
+/* Gradient Text Utility */
+.text-gradient {
+  background: linear-gradient(135deg, var(--doc-primary), #6C63FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+/* Glowing Button Utility */
+.btn-primary.btn-glow {
+  background: linear-gradient(135deg, var(--doc-primary), #6C63FF);
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+/* Sidebar Styling */
+.doc-sidebar {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for Sidebar */
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: var(--doc-border); border-radius: 4px; }
+
+.doc-nav .nav-link {
+  color: var(--doc-muted);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.doc-nav .nav-link i {
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.doc-nav .nav-link:hover {
+  color: var(--doc-text);
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.doc-nav .nav-link:hover i {
+  color: var(--doc-text);
+}
+
+.doc-nav .nav-link.active {
+  color: var(--doc-primary);
+  background-color: rgba(var(--doc-primary-rgb), 0.1);
+  font-weight: 600;
+}
+
+.doc-nav .nav-link.active i {
+  color: var(--doc-primary);
+}
+
+/* Main Content Adjustments */
+.doc-content {
+  margin-left: 280px;
+  max-width: 100vw; /* Keeps content strictly inside viewport */
+}
+
+/* Card Hover Effect */
+.transition-hover {
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.transition-hover:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--doc-primary-rgb), 0.3) !important;
+}
+
+/* Code Blocks Styling Override (macOS Style Integration) */
+pre[class*="language-"] {
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 1.5rem !important;
+  font-size: 0.9rem;
+  /* 🟢 BUG FIX: Allows horizontal scrolling INSIDE the code block on mobile */
+  overflow-x: auto !important; 
+  max-width: 100%;
+}
+
+code {
+  color: var(--doc-primary);
+  word-break: break-word; /* Breaks long inline code */
+}
+
+/* Tree Structure Styling */
+.language-tree {
+  color: #A1A1A1 !important;
+}
+
+/* ------------------------------------------------------------------------
+   MOBILE RESPONSIVE TWEAKS (Under 992px)
+   ------------------------------------------------------------------------ */
+@media (max-width: 991.98px) {
+  .doc-content {
+    margin-left: 0;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .doc-sidebar {
+    width: 320px;
+  }
+}
+
+/* ------------------------------------------------------------------------
+   EXTRA SMALL MOBILE FIXES (iPhone SE / Under 576px)
+   ------------------------------------------------------------------------ */
+@media (max-width: 575.98px) {
+  .display-5 {
+    font-size: 2.2rem;
+  }
+  
+  /* Fixes padding on small cards to save screen space */
+  .card-body, .doc-section .card {
+    padding: 1rem !important; 
+  }
+  
+  pre[class*="language-"] {
+    padding: 1rem !important;
+    font-size: 0.8rem; /* Slightly smaller code font for mobile */
+  }
+
+  /* 🟢 BUG FIX: Stack the Credits list items on mobile so they don't stretch the screen */
+  .list-group-item.d-flex {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+    padding: 1rem !important;
+  }
+
+  /* Notice alert padding fix */
+  .alert {
+    padding: 1.25rem !important;
+  }
+}

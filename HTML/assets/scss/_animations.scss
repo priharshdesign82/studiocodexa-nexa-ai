@@ -1,0 +1,67 @@
+/* ==========================================================================
+   NEXAAI - PREMIUM SAAS & AI STARTUP TEMPLATE
+   File: _animations.scss
+   Description: CSS Keyframes and reusable animation utility classes.
+   ========================================================================== */
+
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%   { opacity: 0.2; transform: scale(1); }
+  50%  { opacity: 0.4; transform: scale(1.1); }
+  100% { opacity: 0.2; transform: scale(1); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 8s infinite alternate;
+}
+
+@keyframes blinkCursor {
+  from, to { border-right-color: transparent; }
+  50% { border-right-color: var(--nx-primary); }
+}
+
+.typing-cursor {
+  border-right: 2px solid var(--nx-primary);
+  animation: blinkCursor 0.75s step-end infinite;
+  padding-right: 4px;
+}
+
+@keyframes chatPop {
+  0%   { opacity: 0; transform: translateY(15px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.chat-bubble-anim {
+  opacity: 0;
+  animation: chatPop 0.5s var(--nx-transition-bounce) forwards;
+}
+
+.delay-1 { animation-delay: 0.5s; }
+.delay-2 { animation-delay: 1.5s; }
+.delay-3 { animation-delay: 2.5s; }
+.delay-4 { animation-delay: 3.5s; }
+
+
+@keyframes scrollX {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll-x {
+  display: flex;
+  width: max-content;
+  animation: scrollX 30s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}

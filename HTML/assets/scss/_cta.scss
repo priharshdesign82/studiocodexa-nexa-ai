@@ -1,0 +1,61 @@
+/* ==========================================================================
+   NEXAAI - FINAL CTA SECTION (LANGCHAIN DATA WAVE STYLE)
+   File: _cta.scss
+   ========================================================================== */
+
+.nx-final-cta {
+  background-color: var(--nx-bg);
+  overflow: hidden;
+  .nx-data-wave {
+    position: absolute;
+    top: 50%;
+    left: -30%;
+    transform: translateY(-50%) perspective(800px) rotateY(45deg) rotateX(15deg);
+    width: 150%;
+    height: 600px;
+    background-image:
+      linear-gradient(rgba(0, 212, 255, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 255, 0.2) 1px, transparent 1px);
+    background-size: 40px 40px;
+    border-radius: 50%;
+
+    mask-image: radial-gradient(ellipse at center, black 10%, transparent 70%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 10%, transparent 70%);
+
+    animation: wavePulse 10s infinite alternate ease-in-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 250px;
+      height: 250px;
+      background: var(--nx-primary);
+      filter: blur(120px);
+      opacity: 0.25;
+      border-radius: 50%;
+    }
+  }
+  .col-lg-6 {
+    min-height: 400px;
+  }
+}
+
+@keyframes wavePulse {
+  0% {
+    transform: translateY(-50%) perspective(800px) rotateY(45deg) rotateX(15deg) scale(1);
+  }
+
+  100% {
+    transform: translateY(-50%) perspective(800px) rotateY(35deg) rotateX(20deg) scale(1.1);
+  }
+}
+
+@include media-down(lg) {
+  .nx-final-cta {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}

@@ -1,0 +1,87 @@
+/* ==========================================================================
+   PRICING SECTION
+   ========================================================================== */
+
+.pricing-section {
+  .blur-xl {
+    filter: blur(180px);
+    opacity: 0.20;
+  }
+
+  .nx-pricing-toggle {
+    width: 60px;
+    height: 32px;
+    background-color: var(--nx-bg-elevated);
+    border: 1px solid var(--nx-border);
+    border-radius: var(--nx-radius-full);
+    position: relative;
+    cursor: pointer;
+    transition: background-color var(--nx-transition-fast);
+
+    .form-check-input {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      opacity: 0;
+      cursor: pointer;
+      position: absolute;
+      z-index: 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      background: var(--nx-gradient-primary);
+      border-radius: 50%;
+      transition: transform var(--nx-transition-bounce);
+      box-shadow: var(--nx-shadow-sm);
+    }
+
+    &:has(.form-check-input:checked) {
+      border-color: var(--nx-primary);
+      
+      &::after {
+        transform: translateX(28px);
+      }
+    }
+  }
+
+  /* Pricing Cards */
+  .nx-pricing-card {
+    transition: transform var(--nx-transition-base), box-shadow var(--nx-transition-base), border-color var(--nx-transition-base);
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .list-unstyled li {
+      transition: color var(--nx-transition-fast);
+
+      &:hover {
+        color: var(--nx-text-secondary);
+      }
+    }
+  }
+
+  /* Popular Tier Specifics */
+  .popular-tier {
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+
+    &:hover {
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+    }
+
+    .popular-badge {
+      z-index: 2;
+      letter-spacing: 1px;
+      box-shadow: var(--nx-glow-primary);
+      white-space: nowrap;
+    }
+  }
+}
